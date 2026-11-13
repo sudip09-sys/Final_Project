@@ -12,7 +12,15 @@ GitHub Pages deployment completed successfully; hosting is enabled on the `gh-pa
 
 ## Source
 
-`static/project/` contains `index.html`, `style.css`, `script.js`, `mark.svg`, and `.nojekyll`.
+`static/project/` contains the HTML page, base layout CSS, attendance walkthrough JavaScript, portfolio presentation CSS/JavaScript, favicon, and locally hosted fonts with their licenses.
+
+## Portfolio visual system
+
+The homepage follows [Sudip Sah's portfolio](https://sudip09-sys.github.io/Portfolio/): near-black background, red ember canvas, red accents, bold condensed headings, outlined display text, and monospaced labels. The original Attendly content and walkthrough remain available.
+
+Light/dark mode and pause/resume motion controls work independently of attendance. Operating-system reduced-motion preferences take priority, decorative animation stops in hidden tabs, and particle count is capped for smaller screens. Theme and motion choices are optional local browser preferences; sample attendance is never persisted.
+
+The local font subsets use Barlow Condensed, DM Sans and IBM Plex Mono, with Attendly family aliases and included Open Font Licenses. They load from the same origin on GitHub Pages and Render.
 
 The Python server serves these files publicly at `/static/project/index.html`. Signed-out visitors to `/` are directed to this webpage. **Launch Attendly** opens `/login`; after administrator sign-in, `/` displays the attendance workspace with its existing authentication.
 
@@ -27,11 +35,11 @@ The `gh-pages` branch contains the published static files at its root, ready for
 
 The Python server and recognition model continue to run on Render. GitHub Pages hosts the project webpage and its sample simulation. Neither the walkthrough nor this public page stores real attendance or accesses a camera.
 
-When editing the webpage, update `static/project/` on `main` and publish the same five files to `gh-pages`. Do not copy the backend, environment files, databases, or credentials into the static branch.
+When editing the webpage, update `static/project/` on `main` and publish that directory's contents, including its fonts subdirectory, to the root of `gh-pages`. Do not copy the backend, environment files, databases, or credentials into the static branch.
 
 ## Walkthrough behavior
 
-- Three fictional sample students; no network calls and no browser storage.
+- Three fictional sample students; attendance uses no network calls and no browser storage. Only theme and motion preferences may be remembered locally.
 - Simulated check-in, duplicate prevention, unknown-visitor rejection, and manual attendance with a verification note.
 - Downloadable sample CSV, including formula escaping for the note field.
 - Reset clears the sample state, including any pending simulated check-in.

@@ -1,0 +1,18 @@
+{
+  "reference": "https://sudip09-sys.github.io/Portfolio/",
+  "checks": {
+    "dark_theme": "PASS",
+    "light_theme": "PASS",
+    "motion_pause_resume": "PASS",
+    "local_fonts": "PASS: browser fonts loaded",
+    "desktop_overflow": false,
+    "check_in": "PASS",
+    "duplicate_prevention": "PASS",
+    "unknown_visitor_rejection": "PASS",
+    "manual_entry": "PASS",
+    "csv_export_trigger": "PASS",
+    "reset": "PASS",
+    "phone_hardware": "NOT TESTED"
+  },
+  "scope": "Public homepage presentation and sample walkthrough; Python recognition and database logic unchanged."
+}
