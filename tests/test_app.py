@@ -45,7 +45,9 @@ def cls(c,cohort='CE'):
 def test_authentication_required(app):
     c=app.test_client()
     assert c.get('/api/state').status_code==401
-    assert c.get('/').status_code==302
+    root = c.get('/')
+    assert root.status_code==302 and root.location=='/static/project/index.html'
+    assert 'Less roll call.' in c.get(root.location).text
     assert c.get('/healthz').status_code==200
 
 

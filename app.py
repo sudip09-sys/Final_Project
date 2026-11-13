@@ -124,6 +124,8 @@ def create_app(config=None):
                 return jsonify(error='Security token expired. Reload the page.'), 403
         if request.path not in ('/login', '/healthz') and not request.path.startswith('/static/'):
             if not session.get('admin'):
+                if request.path == '/':
+                    return redirect('/static/project/index.html')
                 return (jsonify(error='Please sign in.'), 401) if request.path.startswith('/api/') else redirect('/login')
 
     @app.teardown_request

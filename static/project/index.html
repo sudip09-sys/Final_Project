@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Attendly by Sudip Sah. A supervised, consent-based face recognition attendance prototype built with Python, OpenCV and SQLAlchemy.">
+  <meta name="theme-color" content="#111827">
+  <title>Attendly — Less roll call. More class time.</title>
+  <link rel="icon" type="image/svg+xml" href="./mark.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#" aria-label="Attendly home"><span class="brand-mark" aria-hidden="true">a</span>Attendly<span class="brand-label">PROJECT</span></a>
+      <nav aria-label="Main navigation"><a href="#workflow">How it works</a><a href="#explore">Try the walkthrough</a><a href="#resources">Documentation</a></nav>
+      <a class="button small primary" href="https://attendly-sudip.onrender.com/login">Open app <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> SMART ATTENDANCE, HUMAN FIRST</p>
+          <h1>Less roll call.<br><span>More class time.</span></h1>
+          <p class="hero-lead">A clearer start to every class. Enroll your roster, open a session, and record attendance with supervised face recognition—or a simple manual check-in.</p>
+          <div class="hero-actions"><a class="button primary" href="https://attendly-sudip.onrender.com/login">Launch Attendly <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="button dark-outline" href="#explore">Explore the walkthrough <span aria-hidden="true">↓</span></a></div>
+          <p class="launch-note">Administrator sign-in required. The free app may take a minute to wake up.</p>
+          <div class="hero-tech" aria-label="Core technologies"><span>Python</span><i aria-hidden="true">/</i><span>OpenCV</span><i aria-hidden="true">/</i><span>Face Recognition</span><i aria-hidden="true">/</i><span>SQLAlchemy</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration of an attendance check-in">
+          <div class="visual-top"><span><span class="status-dot" aria-hidden="true"></span> CHECK-IN STATION</span><span class="visual-tag">ILLUSTRATION</span></div>
+          <div class="scan-portrait" aria-hidden="true">
+            <div class="portrait-grid"></div><span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+            <svg class="face-illustration" viewBox="0 0 280 300" fill="none"><path d="M65 147c0-65 22-104 75-104s75 39 75 104c0 68-34 112-75 112S65 215 65 147Z" stroke="currentColor" stroke-width="2"/><path d="M65 140c1-52 32-85 80-86 21 33 41 41 69 41M88 146c11-9 26-9 36-1m32 0c12-8 26-8 38 1m-54 14-7 32 14 4m-36 22c17 10 35 10 52 0M98 243l-9 36m91-36 9 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M94 145h25m42 0h25M140 94v26m-10 94h20" stroke="#d2edb1" stroke-width="1"/><g fill="#d2edb1"><circle cx="106" cy="146" r="4"/><circle cx="174" cy="146" r="4"/><circle cx="140" cy="194" r="3"/><circle cx="116" cy="219" r="3"/><circle cx="165" cy="219" r="3"/><circle cx="140" cy="103" r="3"/><circle cx="77" cy="178" r="3"/><circle cx="203" cy="178" r="3"/></g></svg>
+            <div class="scan-line"></div><span class="portrait-label">ONE PERSON. ONE CHECK-IN.</span>
+          </div>
+          <div class="illustration-result"><span class="check-icon" aria-hidden="true">✓</span><div><strong>A familiar face. A clear record.</strong><span>Consent first. Administrator reviewed.</span></div><span class="result-arrow" aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="visual-caption"><span class="lock-icon" aria-hidden="true">◇</span> Face templates encrypted. Raw photos never saved by the app.</div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>AN ACADEMIC PROTOTYPE BY <strong>SUDIP SAH</strong></span><a href="https://github.com/sudip09-sys/Final_Project">Explore the source <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+    </section>
+
+    <section class="section workflow container" id="workflow">
+      <div class="section-heading"><div><p class="eyebrow">01 / THE WORKFLOW</p><h2>From first hello<br>to attendance recorded.</h2></div><p>One supervised station. Four straightforward steps. A manual alternative is always available.</p></div>
+      <div class="steps">
+        <article><div class="step-top"><span>01</span><span aria-hidden="true">＋</span></div><h3>Enroll with consent</h3><p>Add a student and their cohort. Face enrollment is optional and requires explicit consent.</p></article>
+        <article><div class="step-top"><span>02</span><span aria-hidden="true">▦</span></div><h3>Open a class session</h3><p>Choose a class title and cohort. Keep each session’s attendance in its own register.</p></article>
+        <article><div class="step-top"><span>03</span><span aria-hidden="true">⌗</span></div><h3>Capture. Review. Check in.</h3><p>Use the browser camera or an image. Unknown and ambiguous matches stay unmarked.</p></article>
+        <article><div class="step-top"><span>04</span><span aria-hidden="true">↓</span></div><h3>Export and close</h3><p>Download the attendance register as CSV, then close the session when class is finished.</p></article>
+      </div>
+    </section>
+
+    <section class="explore-section" id="explore">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">02 / TAKE A CLOSER LOOK</p><h2>Try a class.<br>See every decision.</h2></div><p>This browser walkthrough uses fictional students. It simulates results; it does not access your camera or perform face recognition.</p></div>
+        <div class="demo-shell">
+          <div class="demo-titlebar"><span class="mini-brand"><span class="brand-mark" aria-hidden="true">a</span> Attendly</span><span class="sample-label">INTERACTIVE WALKTHROUGH · SAMPLE DATA</span><button class="text-button" id="reset-demo" type="button">Reset <span aria-hidden="true">↺</span></button></div>
+          <div class="demo-content">
+            <div class="demo-station">
+              <div class="demo-section-label"><span class="status-dot" aria-hidden="true"></span> CLASS SESSION OPEN</div>
+              <h3>Computer Vision Lab</h3><p class="demo-subtitle">Sample cohort · CE Demo</p>
+              <div class="demo-avatar-wrap" aria-hidden="true"><span class="demo-bracket b1"></span><span class="demo-bracket b2"></span><span class="demo-bracket b3"></span><span class="demo-bracket b4"></span><div class="demo-avatar" id="demo-avatar">AS</div><span class="demo-avatar-caption" id="avatar-caption">Ready for a simulated check-in</span></div>
+              <label for="demo-student">Choose a sample participant</label><select id="demo-student"><option value="anika">Anika S. · DEMO-001</option><option value="min">Min J. · DEMO-002</option><option value="alex">Alex R. · DEMO-003</option><option value="unknown">Unknown visitor · not enrolled</option></select>
+              <button class="button primary full" id="simulate-checkin" type="button">Simulate check-in <span aria-hidden="true">→</span></button>
+              <button class="demo-manual" id="open-manual-demo" type="button">Record manually instead <svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <noscript><p>Enable JavaScript to try the simulation, or open the live application above.</p></noscript>
+            </div>
+            <div class="demo-register">
+              <div class="demo-register-head"><div><span class="demo-section-label">YOUR SAMPLE REGISTER</span><h3>Every check-in, accounted for.</h3></div><span class="class-badge">CE Demo</span></div>
+              <div class="demo-stats"><div><strong id="present-count">0<span>/3</span></strong><span>present in this session</span></div><div class="progress-track" role="progressbar" aria-label="Sample attendance" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="demo-progress"><span id="progress-fill"></span></div></div>
+              <div class="demo-feedback" id="demo-feedback" role="status" aria-live="polite"><span aria-hidden="true">↖</span><div><strong>Start with a sample check-in.</strong><p>Then try the same student again, or choose an unknown visitor.</p></div></div>
+              <div class="demo-table-wrap"><table class="demo-table"><caption class="sr-only">Sample attendance register</caption><thead><tr><th scope="col">Student</th><th scope="col">Status</th><th scope="col">Method</th></tr></thead><tbody id="sample-roster"><tr><td><span class="table-avatar">AS</span><span>Anika S.<small>DEMO-001</small></span></td><td><span class="pill waiting">Unmarked</span></td><td>—</td></tr><tr><td><span class="table-avatar">MJ</span><span>Min J.<small>DEMO-002</small></span></td><td><span class="pill waiting">Unmarked</span></td><td>—</td></tr><tr><td><span class="table-avatar">AR</span><span>Alex R.<small>DEMO-003</small></span></td><td><span class="pill waiting">Unmarked</span></td><td>—</td></tr></tbody></table></div>
+              <div class="demo-export"><p>One student + one session = one attendance entry.</p><button class="button export-button" id="export-sample" type="button">Export sample CSV <span aria-hidden="true">↓</span></button></div>
+            </div>
+          </div>
+        </div>
+        <p class="demo-footnote">Sample data lives only in this tab and clears on reload. For real camera capture and server-side recognition, <a href="https://attendly-sudip.onrender.com/login">open the application <svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>.</p>
+      </div>
+    </section>
+
+    <section class="section container principles">
+      <div class="principle-intro"><p class="eyebrow">03 / BUILT WITH CARE</p><h2>Convenience with<br>a human in the loop.</h2><p>Recognition supports the administrator. Uncertain results do not mark attendance automatically.</p><a class="inline-link" href="https://github.com/sudip09-sys/Final_Project/blob/main/docs/Research_Notes.md">Read the recognition approach <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
+      <div class="principle-list"><article><span aria-hidden="true">01</span><div><h3>Consent is a choice.</h3><p>Students can use manual attendance without enrolling a face. Enrolled templates can be withdrawn.</p></div></article><article><span aria-hidden="true">02</span><div><h3>Keep less. Protect what stays.</h3><p>Raw images are processed in memory. Stored face templates are encrypted with Fernet.</p></div></article><article><span aria-hidden="true">03</span><div><h3>Know the prototype’s limits.</h3><p>There is no liveness detection: a photo may pass recognition. Supervise the station and review results.</p></div></article></div>
+    </section>
+
+    <section class="architecture-section">
+      <div class="container"><div class="architecture-heading"><p class="eyebrow">UNDER THE HOOD</p><h2>A practical Python stack.</h2><p>Browser capture, server-side recognition, and a relational attendance register.</p></div><div class="architecture-track"><article><span class="architecture-number">01 / INPUT</span><h3>Camera or image</h3><p>Browser capture · JPEG / PNG<br>One face at a time</p></article><span class="architecture-arrow" aria-hidden="true">→</span><article><span class="architecture-number">02 / RECOGNITION</span><h3>Python + OpenCV</h3><p>HOG detection · dlib embeddings<br>Cohort-scoped matching</p></article><span class="architecture-arrow" aria-hidden="true">→</span><article><span class="architecture-number">03 / RECORD</span><h3>SQLAlchemy + SQL</h3><p>Duplicate prevention · audit events<br>MySQL setup · CSV export</p></article></div><p class="storage-note"><span class="status-dot" aria-hidden="true"></span><strong>Live demo status:</strong> temporary SQLite storage. Records reset on Render restarts; persistent database setup is pending.</p></div>
+    </section>
+
+    <section class="section container resources" id="resources">
+      <div class="section-heading"><div><p class="eyebrow">04 / OPEN THE PROJECT</p><h2>The work behind<br>the workspace.</h2></div><p>Explore the implementation, requirements, design decisions, and actual test evidence.</p></div>
+      <div class="resource-grid"><a class="resource-card" href="https://github.com/sudip09-sys/Final_Project"><span class="resource-type">01 / SOURCE CODE <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><h3>Explore the repository</h3><p>Python application, browser interface, Docker setup, and automated tests.</p><span class="resource-bottom">GitHub / MIT license</span></a><a class="resource-card" href="https://github.com/sudip09-sys/Final_Project/blob/main/docs/SRS.md"><span class="resource-type">02 / REQUIREMENTS <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><h3>Understand the system</h3><p>Functional requirements, constraints, and acceptance criteria.</p><span class="resource-bottom">Software requirements specification</span></a><a class="resource-card" href="https://github.com/sudip09-sys/Final_Project/blob/main/docs/Testing_Report.md"><span class="resource-type">03 / TESTING <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><h3>Inspect the evidence</h3><p>Contract tests, model smoke checks, and the scope of verification.</p><span class="resource-bottom">Testing report</span></a><a class="resource-card" href="https://github.com/sudip09-sys/Final_Project/blob/main/docs/User_Manual.md"><span class="resource-type">04 / USER MANUAL <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><h3>Run your first class</h3><p>Enrollment, class sessions, check-in, exports, and template withdrawal.</p><span class="resource-bottom">Administrator guide</span></a></div>
+      <div class="faq"><details><summary>Does this webpage recognize faces?</summary><p>The interactive walkthrough simulates attendance using fictional students. The <a href="https://attendly-sudip.onrender.com/login">Python application</a> provides actual camera capture and server-side face recognition after administrator sign-in.</p></details><details><summary>Do I need to enroll a face to record attendance?</summary><p>No. Administrators can add a student without a face image and record attendance manually with a verification note.</p></details><details><summary>Will the free demo keep my records?</summary><p>The current Render demo uses temporary SQLite storage, so data resets when the service restarts. Export CSV before leaving. The repository includes a MySQL configuration and <a href="https://github.com/sudip09-sys/Final_Project/blob/main/docs/Free_Deployment.md">instructions for connecting persistent storage</a>.</p></details></div>
+    </section>
+    <section class="closing"><div class="container closing-inner"><div><p class="eyebrow">READY FOR A CLEARER START?</p><h2>Let class begin.</h2><p>Open the live app to enroll a roster and run your first session.</p></div><a class="button primary" href="https://attendly-sudip.onrender.com/login">Launch Attendly <span aria-hidden="true"><svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div></section>
+  </main>
+  <footer class="footer container"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true">a</span>Attendly</a><p>Designed & built by <strong>Sudip Sah</strong> · Academic prototype</p><a href="https://github.com/sudip09-sys/Final_Project">View source <svg class="icon-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M6 18 18 6M6 6h12v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></footer>
+  <dialog id="manual-dialog" class="manual-dialog"><form id="manual-form"><div class="dialog-heading"><div><p class="eyebrow">SAMPLE WALKTHROUGH</p><h2>Manual check-in</h2></div><button id="close-manual" type="button" aria-label="Close manual check-in">×</button></div><p>Choose a fictional student and add a verification note.</p><label for="manual-student">Sample student</label><select id="manual-student"><option value="anika">Anika S. · DEMO-001</option><option value="min">Min J. · DEMO-002</option><option value="alex">Alex R. · DEMO-003</option></select><label for="manual-note">Verification note</label><input id="manual-note" maxlength="120" required placeholder="For example: verified student ID"><button class="button primary full" type="submit">Record sample attendance <span aria-hidden="true">→</span></button><p class="dialog-footnote">This changes only the sample register on this page.</p></form></dialog>
+</body>
+</html>
