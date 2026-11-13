@@ -2,6 +2,14 @@
 
 The public project webpage is built with plain HTML, CSS, and JavaScript. No Node install or React build is required. It introduces the working Python application and provides a clearly labeled browser-only sample attendance walkthrough.
 
+## Live URLs
+
+- GitHub Pages: https://sudip09-sys.github.io/Final_Project/
+- Render-hosted entry page: https://attendly-sudip.onrender.com/
+- Administrator application: https://attendly-sudip.onrender.com/login
+
+GitHub Pages deployment completed successfully; hosting is enabled on the `gh-pages` branch.
+
 ## Source
 
 `static/project/` contains `index.html`, `style.css`, `script.js`, `mark.svg`, and `.nojekyll`.

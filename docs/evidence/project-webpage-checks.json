@@ -1,0 +1,27 @@
+{
+  "url": "https://sudip09-sys.github.io/Final_Project/",
+  "application_commit": "ba8a42e5663a05f7f83aa05777d080179cd0aa09",
+  "pages_commit": "2041715178731f63ffa4a49f87e447712557b187",
+  "github_pages_workflow": 43430492964,
+  "github_pages_result": "success",
+  "checks": {
+    "desktop_render": "PASS",
+    "sample_checkin": "PASS: preview and published site",
+    "duplicate_prevention": "PASS: preview",
+    "unknown_visitor": "PASS: preview",
+    "manual_attendance": "PASS: preview",
+    "csv_download_trigger": "PASS: preview",
+    "reset": "PASS: preview and published site",
+    "dialog_escape_keyboard": "PASS: published site",
+    "documentation_disclosure": "PASS: preview",
+    "launch_app_link": "PASS: published site to Render login",
+    "desktop_horizontal_overflow": false,
+    "phone_viewport": "NOT VERIFIED: responsive preview controls unavailable",
+    "application_suite": "13 passed"
+  },
+  "limitations": [
+    "Walkthrough uses fictional sample data and does not perform face recognition.",
+    "Physical camera hardware not tested.",
+    "Real app still uses temporary SQLite storage."
+  ]
+}

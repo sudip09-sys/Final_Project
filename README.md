@@ -1,6 +1,6 @@
 # Attendly — Smart Attendance Using Face Recognition
 
-**Project webpage:** https://attendly-sudip.onrender.com/static/project/index.html — public overview, interactive sample walkthrough, and documentation. [GitHub Pages setup](docs/Project_Webpage.md).
+**Live project webpage (GitHub Pages):** https://sudip09-sys.github.io/Final_Project/ — public overview, interactive sample walkthrough, and documentation. [Webpage source and hosting](docs/Project_Webpage.md).
 
 **Administrator application:** https://attendly-sudip.onrender.com/login — password protected. It currently uses temporary SQLite storage, which resets when Render restarts. Persistent TiDB storage is not yet connected. See [free deployment setup](docs/Free_Deployment.md).
 
