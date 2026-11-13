@@ -1,9 +1,0 @@
-flowchart TB
-  B["Administrator browser\nCamera or image upload"] -->|"Session cookie and CSRF"| F["Flask web application"]
-  F --> R["OpenCV and dlib\nHOG detection and 128D embedding"]
-  F --> E["Fernet template encryption"]
-  E --> D[("MySQL database\nSQLite for local setup")]
-  R --> M["Euclidean matching\nThreshold and ambiguity rejection"]
-  M --> F
-  F -->|"Unique person and session"| D
-  F -->|"CSV download"| B
