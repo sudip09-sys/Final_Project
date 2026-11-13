@@ -6,6 +6,7 @@ import json
 import os
 import re
 import secrets
+import ssl
 import threading
 import time
 from datetime import datetime, timedelta, timezone
@@ -78,6 +79,7 @@ def create_app(config=None):
         ADMIN_PASSWORD_HASH=os.getenv('ADMIN_PASSWORD_HASH'),
         EMBEDDING_KEY=os.getenv('EMBEDDING_KEY'),
         DATABASE_URL=os.getenv('DATABASE_URL', 'sqlite:///attendance.db'),
+        DATABASE_TLS=os.getenv('DATABASE_TLS', '0') == '1',
         TIMEZONE=os.getenv('TIMEZONE', 'Asia/Seoul'),
         THRESHOLD=float(os.getenv('FACE_THRESHOLD', '0.48')),
         SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE='Strict',
@@ -94,7 +96,11 @@ def create_app(config=None):
         raise RuntimeError('FACE_THRESHOLD must be between 0.3 and 0.6.')
     local_zone = ZoneInfo(app.config['TIMEZONE'])
     url = app.config['DATABASE_URL'].replace('mysql://', 'mysql+pymysql://', 1)
-    engine = create_engine(url, pool_pre_ping=True)
+    connection_options = {}
+    if url.startswith('mysql') and app.config['DATABASE_TLS']:
+        connection_options['ssl'] = ssl.create_default_context()
+    engine = create_engine(url, pool_pre_ping=True, connect_args=connection_options)
+    app.config['TEMPORARY_CLOUD_STORAGE'] = bool(os.getenv('RENDER')) and url.startswith('sqlite')
     if url.startswith('sqlite'):
         @event.listens_for(engine, 'connect')
         def sqlite_fk(conn, _):
@@ -225,7 +231,8 @@ def create_app(config=None):
 
     @app.get('/')
     def index():
-        return render_template('index.html', timezone=app.config['TIMEZONE'], threshold=app.config['THRESHOLD'])
+        return render_template('index.html', timezone=app.config['TIMEZONE'], threshold=app.config['THRESHOLD'],
+                               temporary_storage=app.config['TEMPORARY_CLOUD_STORAGE'])
 
     @app.get('/api/state')
     def state():

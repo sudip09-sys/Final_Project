@@ -140,3 +140,33 @@ def test_retention_command(client,app):
     result=app.test_cli_runner().invoke(args=['purge-biometrics','--days','90'])
     assert result.exit_code==0 and 'Removed 1' in result.output
     assert not client.get('/api/state').json['people'][0]['has_face']
+
+
+def test_external_mysql_tls_verifies_certificates(tmp_path, monkeypatch):
+    import ssl
+    original = module.create_engine
+    captured = {}
+    def capture(url, **options):
+        captured.update(options)
+        return original('sqlite:///' + str(tmp_path / 'tls.db'))
+    monkeypatch.setattr(module, 'create_engine', capture)
+    instance = module.create_app(dict(
+        TESTING=True, SECRET_KEY='test-only', EMBEDDING_KEY=Fernet.generate_key().decode(),
+        ADMIN_PASSWORD_HASH=generate_password_hash('test-password'),
+        DATABASE_URL='mysql+pymysql://user:unused@example.invalid:4000/attendance', DATABASE_TLS=True))
+    context = captured['connect_args']['ssl']
+    assert context.verify_mode == ssl.CERT_REQUIRED
+    assert context.check_hostname is True
+    instance.extensions['db_engine'].dispose()
+
+
+def test_cloud_sqlite_warns_about_temporary_records(tmp_path, monkeypatch):
+    monkeypatch.setenv('RENDER', 'true')
+    instance = module.create_app(dict(
+        TESTING=True, SECRET_KEY='test-only', EMBEDDING_KEY=Fernet.generate_key().decode(),
+        ADMIN_PASSWORD_HASH=generate_password_hash('test-password'),
+        DATABASE_URL='sqlite:///' + str(tmp_path / 'cloud.db')))
+    c = instance.test_client()
+    with c.session_transaction() as s:
+        s['admin'] = True
+    assert 'Temporary demo storage' in c.get('/').text

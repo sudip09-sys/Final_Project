@@ -8,4 +8,4 @@ COPY . .
 RUN useradd -m attendance && chown -R attendance:attendance /app
 USER attendance
 ENV PORT=8000 PYTHONUNBUFFERED=1
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} --workers 1 --threads 2 --timeout 120 'app:create_app()'"]
+CMD ["sh", "-c", "exec gunicorn --bind 0.0.0.0:${PORT} --workers 1 --threads 2 --timeout 120 'app:create_app()'"]
