@@ -1,0 +1,16 @@
+{
+  "encoding_seconds": 0.568,
+  "embedding_dimensions": 128,
+  "changed_brightness_match": true,
+  "different_person_rejected": true,
+  "blank_rejected": true,
+  "blank_message": "Expected exactly one face. Found 0. Use a clear, front-facing image.",
+  "two_faces_rejected": true,
+  "two_faces_message": "Expected exactly one face. Found 2. Use a clear, front-facing image.",
+  "corrupt_rejected": true,
+  "corrupt_message": "The image could not be decoded.",
+  "real_enrollment_to_attendance": "PASS",
+  "distance_for_brightness_variation": 0.11787,
+  "real_unknown_api_rejection": "PASS",
+  "scope": "Two public image fixtures, one brightness variation. Functional smoke tests only, not accuracy or demographic validation."
+}

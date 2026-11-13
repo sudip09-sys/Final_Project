@@ -1,0 +1,34 @@
+classDiagram
+  class Person {
+    int id
+    string student_id
+    string name
+    string cohort
+    text embedding
+    datetime consented_at
+    datetime created_at
+  }
+  class ClassSession {
+    int id
+    string title
+    string cohort
+    datetime opened_at
+    bool is_open
+  }
+  class Attendance {
+    int id
+    int person_id
+    int session_id
+    datetime marked_at
+    string method
+    float distance
+    string note
+  }
+  class Audit {
+    int id
+    datetime at
+    string action
+    string detail
+  }
+  Person "1" --> "0..*" Attendance : records
+  ClassSession "1" --> "0..*" Attendance : contains

@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor Administrator as A
+actor Participant as P
+rectangle Attendly {
+ usecase "Sign in" as Login
+ usecase "Manage students" as Students
+ usecase "Enroll a face" as Enroll
+ usecase "Record explicit consent" as Consent
+ usecase "Open or close session" as Sessions
+ usecase "Recognize and check in" as Check
+ usecase "Record manual attendance" as Manual
+ usecase "Export attendance CSV" as Export
+ usecase "Withdraw face template" as Withdraw
+}
+A --> Login
+A --> Students
+A --> Enroll
+A --> Sessions
+A --> Check
+A --> Manual
+A --> Export
+A --> Withdraw
+P --> Consent
+P --> Check
+P --> Withdraw
+Enroll .> Consent : <<include>>
+@enduml
